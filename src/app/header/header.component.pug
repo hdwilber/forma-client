@@ -1,0 +1,12 @@
+nav
+  .header-wrapper
+    span
+      | Medische Expert Facilitator
+    span.spacer
+    button(*ngIf="session != null", routerLink="/dashboard")
+      | Dashboard
+    button(*ngIf='session == null', routerLink="/login")
+      | Login
+    button(*ngIf='session != null', (click)="logoutFnc()")
+      | Logout
+

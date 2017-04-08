@@ -1,0 +1,25 @@
+
+<h1>Create Widget</h1>
+<div class="form" *ngIf="tmp">
+  <div class="input-row">
+    <label>Type:</label>
+    <select *ngIf="wService.types.input" [(ngModel)]="tmp.type" placeholder="Type">
+      <option *ngFor="let r of wService.types.input" [ngValue]="r">{{r.name}}</option>
+    </select>
+  </div>
+  <div class="input-row">
+    <label>Type:</label>
+    <select *ngIf="tmp.type" [(ngModel)]="tmp.subType" placeholder="SubType">
+      <option *ngFor="let r of tmp.type.subTypes" [ngValue]="r">{{r.name}}</option>
+    </select>
+  </div>
+  <div class="input-row">
+    <label>Code:</label>
+    <input [(ngModel)]="tmp.code" type="text" placeholder="Code">
+  </div>
+  <div class="input-row">
+    <label>Label</label>
+    <input [(ngModel)]="tmp.label" type="text" placeholder="Title">
+  </div>
+</div>
+<div class="form-footer"><a class="btn" (click)="create()" type="button">Create </a><a class="btn" (click)="cancel()" type="button">Cancel</a></div>

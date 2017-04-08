@@ -1,0 +1,23 @@
+h1
+  | Update Form Information
+.form(*ngIf='tmp')
+  .input-row
+    label
+      | Code
+    input( [(ngModel)]="tmp.code" type='text', placeholder='Code')
+  .input-row
+    label
+      | Title
+    input([(ngModel)]="tmp.title" type='text', placeholder='Title')
+  .input-row
+    label
+      | Description
+    textarea([(ngModel)]="tmp.desc" type='text', placeholder='Title')
+
+.form-footer
+  a.btn((click)="update()" type='button')
+    | Create 
+  a.btn((click)="cancel()" type='button')
+    | Cancel
+ 
+

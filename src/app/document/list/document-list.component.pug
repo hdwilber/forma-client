@@ -1,0 +1,39 @@
+ng-template(dialog-anchor)
+
+
+h1(*ngIf="project")
+  | Project: {{ project.code }} -- {{ project.title }}
+.document-list
+  a.btn((click)='create()')
+   | Create  
+  a.btn((click)='goToBack()')
+   | Cancel 
+  table
+    thead
+      th 
+        | Code
+      th
+        | Title
+      td
+        | Created
+      td
+        | Actions
+
+    tbody(*ngIf="documents")
+      tr(*ngFor="let p of documents")
+        td
+          | {{p.code}}
+        td
+          | {{p.title}}
+        td
+          | {{p.created}}
+        
+        td
+          a.btn((click)="edit(p)")
+            | Edit
+          a.btn((click)="updateInfo(p)")
+            | Update Info
+          a.btn((click)="delete(p)")
+            | Delete
+
+

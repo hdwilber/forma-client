@@ -1,0 +1,37 @@
+ng-template(dialog-anchor)
+
+h1(*ngIf="document")
+  | Document: {{ document.code }} -- {{ document.title }}
+.form-list
+  a.btn((click)='create()')
+   | Create  
+  a.btn((click)='goToBack()')
+   | Cancel 
+  table
+    thead
+      th 
+        | Code
+      th
+        | Title
+      td
+        | Created
+      td
+        | Actions
+
+    tbody(*ngIf="forms")
+      tr(*ngFor="let p of forms")
+        td
+          | {{p.code}}
+        td
+          | {{p.title}}
+        td
+          | {{p.created}}
+        
+        td
+          a.btn((click)="edit(p)")
+            | Edit
+          a.btn((click)="updateInfo(p)")
+            | Update Info
+          a.btn((click)="delete(p)")
+            | Delete
+

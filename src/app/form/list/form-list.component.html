@@ -1,0 +1,22 @@
+
+<ng-template dialog-anchor></ng-template>
+<h1 *ngIf="document">Document: {{ document.code }} -- {{ document.title }}</h1>
+<div class="form-list"><a class="btn" (click)="create()">Create  </a><a class="btn" (click)="goToBack()">Cancel </a>
+  <table>
+    <thead>
+      <th>
+         Code</th>
+      <th>Title</th>
+      <td>Created</td>
+      <td>Actions</td>
+    </thead>
+    <tbody *ngIf="forms">
+      <tr *ngFor="let p of forms">
+        <td>{{p.code}}</td>
+        <td>{{p.title}}</td>
+        <td>{{p.created}}</td>
+        <td><a class="btn" (click)="edit(p)">Edit</a><a class="btn" (click)="updateInfo(p)">Update Info</a><a class="btn" (click)="delete(p)">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,35 @@
+ng-template(dialog-anchor)
+
+h1(*ngIf="document")
+  | Project: {{ document.code }} -- {{ document.title }}
+.form-list
+  a((click)='create()')
+   | Create  
+  table
+    thead
+      th 
+        | Code
+      th
+        | Label
+      td
+        | Created
+      td
+        | Actions
+
+    tbody(*ngIf="widgets")
+      tr(*ngFor="let p of widgets")
+        td
+          | {{p.code}}
+        td
+          | {{p.label}}
+        td
+          | {{p.created}}
+        
+        td
+          a.btn((click)="edit(p)")
+            | Edit
+          a.btn((click)="updateInfo(p)")
+            | Update Info
+          a.btn((click)="delete(p)")
+            | Delete
+

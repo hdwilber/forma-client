@@ -1,0 +1,34 @@
+
+h1
+  | Update Widget
+.form(*ngIf='tmp && widget')
+  .input-row
+    label
+      | Type:
+    select(*ngIf="wService.types.input", [(ngModel)]="tmp.type", placeholder='Type')
+      option(*ngFor="let r of wService.types.input", [ngValue]="r")
+        | {{r.name}}
+
+  .input-row
+    label
+      | Type:
+    select(*ngIf="tmp.type", [(ngModel)]="tmp.subType", placeholder='SubType')
+      option(*ngFor="let r of tmp.type.subTypes", [ngValue]="r")
+        | {{r.name}}
+
+  .input-row
+    label
+      | Code:
+    input( [(ngModel)]="tmp.code" type='text', placeholder='Code')
+  .input-row
+    label
+      | Label
+    input([(ngModel)]="tmp.label" type='text', placeholder='Title')
+
+.form-footer
+  a.btn((click)="update()" type='button')
+    | Create 
+  a.btn((click)="cancel()" type='button')
+    | Cancel
+ 
+

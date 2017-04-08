@@ -1,0 +1,6 @@
+
+<div class="home-grid">
+  <user-login *ngIf="!this.userService.session"></user-login>
+  <user-register *ngIf="!this.userService.session"></user-register>
+  <h1>Welcome to --> forma <-- NExt Generation Form editor</h1>
+</div>

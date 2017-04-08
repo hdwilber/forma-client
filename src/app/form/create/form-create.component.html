@@ -1,0 +1,17 @@
+
+<h1>Create Form</h1>
+<div class="form" *ngIf="tmp">
+  <div class="input-row">
+    <label>Code</label>
+    <input [(ngModel)]="tmp.code" type="text" placeholder="Code">
+  </div>
+  <div class="input-row">
+    <label>Title</label>
+    <input [(ngModel)]="tmp.title" type="text" placeholder="Title">
+  </div>
+  <div class="input-row">
+    <label>Description</label>
+    <textarea [(ngModel)]="tmp.desc" type="text" placeholder="Title"></textarea>
+  </div>
+</div>
+<div class="form-footer"><a class="btn" (click)="create()" type="button">Create </a><a class="btn" (click)="cancel()" type="button">Cancel</a></div>

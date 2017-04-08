@@ -1,0 +1,21 @@
+
+<ng-template dialog-anchor></ng-template>
+<div class="project-list"><a (click)="create()">Create  </a>
+  <table>
+    <thead>
+      <th>
+         Code</th>
+      <th>Title</th>
+      <td>Created</td>
+      <td>Actions</td>
+    </thead>
+    <tbody *ngIf="projects">
+      <tr *ngFor="let p of projects">
+        <td>{{p.code}}</td>
+        <td>{{p.title}}</td>
+        <td>{{p.created}}</td>
+        <td><a class="btn" (click)="edit(p)">Edit</a><a class="btn" (click)="updateInfo(p)">Update Info</a><a class="btn" (click)="delete(p)">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,8 @@
+
+<nav>
+  <div class="header-wrapper"><span>Medische Expert Facilitator</span><span class="spacer"></span>
+    <button *ngIf="session != null" routerLink="/dashboard">Dashboard</button>
+    <button *ngIf="session == null" routerLink="/login">Login</button>
+    <button *ngIf="session != null" (click)="logoutFnc()">Logout</button>
+  </div>
+</nav>
